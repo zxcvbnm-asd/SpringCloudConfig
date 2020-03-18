@@ -1,0 +1,26 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: consumer
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+       defaultZone: http://localhost:8082/eureka/
+  instance:
+    instance-id: user_consumer
+    prefer-ip-address: true
+
+#fegin 开启断路器
+feign:
+  hystrix:
+    enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
+
+
