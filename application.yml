@@ -23,4 +23,6 @@ management:
       exposure:
         include: hystrix.stream
 
+username: liuweidong
+
 
